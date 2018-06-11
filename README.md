@@ -2,7 +2,7 @@
 
 A simple command line tool that takes markdown files and outputs html. This isn't much more than an alias of `pandoc` and markdown-css
 
-## install
+## Install
 
 1. Install pandoc
    ```bash
@@ -22,3 +22,13 @@ A simple command line tool that takes markdown files and outputs html. This isn'
    git clone <this repo>
    mv markdownc/markdownc $HOME/bin
    ```
+
+## Usage
+
+Give markdownc markdown file you wish to turn into html. Here is an example 
+
+```bash
+markdownc foo.md
+```
+
+With this input program will create `foo.html` 
