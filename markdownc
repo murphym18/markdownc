@@ -1,0 +1,27 @@
+#!/usr/bin/python3
+
+import sys
+from subprocess import call
+
+if len(sys.argv) < 2:
+    print('Input file missing')
+    exit(3)
+
+input_file = sys.argv[1]
+
+output_file = input_file
+if output_file[-3:] == '.md':
+    output_file = output_file[:-3]
+
+output_file = output_file + '.html'
+
+cli_cmd = [
+    '/usr/bin/pandoc',
+    input_file,
+    '--output=' + output_file,
+    '--to=html5',
+    '--css=/home/michael/.local/share/markdown-css/github.css',
+    '--highlight-style=haddock',
+    '--self-contained'
+]
+call(cli_cmd)
