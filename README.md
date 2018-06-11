@@ -1,6 +1,6 @@
 # Markdownc
 
-A simple command line tool that takes markdown files and outputs html. This isn't much more than a wrapper of `pandoc` and markdown-css
+A simple command line tool that takes markdown files and outputs html. This isn't much more than a wrapper of `pandoc` and [markdown-css](https://github.com/otsaloma/markdown-css)
 
 ## Install
 
@@ -25,7 +25,7 @@ A simple command line tool that takes markdown files and outputs html. This isn'
 
 ## Usage
 
-Give markdownc markdown file you wish to turn into html. Here is an example 
+Give markdownc the markdown file you wish to turn into html. Here is an example 
 
 ```bash
 markdownc foo.md
