@@ -13,6 +13,7 @@ output_file = input_file
 if output_file[-3:] == '.md':
     output_file = output_file[:-3]
 
+title = output_file
 output_file = output_file + '.html'
 
 cli_cmd = [
@@ -22,6 +23,8 @@ cli_cmd = [
     '--to=html5',
     '--css=/home/michael/.local/share/markdown-css/github.css',
     '--highlight-style=haddock',
-    '--self-contained'
+    '--self-contained',
+    '--metadata',
+    f'pagetitle="{title}"'
 ]
 call(cli_cmd)
