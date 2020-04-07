@@ -4,9 +4,9 @@ A simple command line tool that takes markdown files and outputs html. This isn'
 
 ## Install
 
-1. Install pandoc
+1. Install pandoc and inotify-tools
    ```bash
-   sudo apt install pandoc
+   sudo apt install pandoc inotify-tools
    ```
 
 1. Install the css themes
