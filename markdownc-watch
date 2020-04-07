@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# use this to auto converter markdown to html when the markdown file changes
+# Give this script one argument: the file you wish to watch 
+while inotifywait -e modify $1
+do
+    markdownc $1
+done
