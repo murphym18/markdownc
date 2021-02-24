@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+aspell --mode=markdown check $1
