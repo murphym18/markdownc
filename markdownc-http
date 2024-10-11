@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Function to kill the background process when the script is interrupted
+cleanup() {
+    echo "Stopping markdownc-watch (inotifywait)..."
+    pkill -P $watch_pid # Kill inotifywait or any child processes started by markdownc-watch
+}
+
+# Trap SIGINT (Ctrl+C) and call the cleanup function
+trap cleanup SIGINT
+
+# Run markdownc on the markdown file
+markdownc $1
+
+# Start markdownc-watch in the background and capture its PID
+markdownc-watch $1 &
+watch_pid=$!
+
+# Remove `.md` extension and replace with `.html`
+html_file="${1%.md}.html"
+
+# Run browser-sync and wait for it to finish
+browser-sync start --server --files $html_file
+
+# Wait for the markdownc-watch process (and inotifywait) to finish
+wait $watch_pid
