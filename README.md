@@ -17,10 +17,11 @@ A simple command line tool that takes markdown files and outputs html. This isn'
 
 1. Install this script
    ```bash
-   mkdir $HOME/bin
+   mkdir -p $HOME/.local/bin
    cd /tmp
    git clone https://github.com/murphym18/markdownc.git
-   mv markdownc/markdownc $HOME/bin
+   cd markdownc
+   cp markdownc markdownc-watch markdown-spellcheck ~/.local/bin/
    ```
 
 ## Usage
