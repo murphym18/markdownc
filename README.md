@@ -32,3 +32,28 @@ markdownc foo.md
 ```
 
 With this input, the program will create `foo.html` 
+
+## Extras
+
+There are two other helper programs:
+
+- markdownc-watch
+- markdownc-http
+
+`markdownc-watch` will auto-run `markdownc` whenever you save changes to your file. To use it:
+```bash
+markdownc-watch foo.md
+```
+
+`markdownc-http` will also auto-run `markdownc` when you save changes, but it will run an HTTP server too. The HTTP server will live-reload when you make changes. To use this you need to isntall `browser-sync` like so:
+```bash
+npm install -g browser-sync
+```
+
+Then to use the `markdownc-http` run:
+```bash
+markdownc-http foo.md
+```
+
+This will compile `foo.md` to `foo.html`, start `markdownc-watch`, and start `browser-sync`. You can then open http://localhost:3000/foo.html to see a live preview of your markdown rendered to HTML.
+
