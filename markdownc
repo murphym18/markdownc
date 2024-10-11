@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+import os
 import sys
 from subprocess import call
 
@@ -21,7 +22,7 @@ cli_cmd = [
     input_file,
     '--output=' + output_file,
     '--to=html5',
-    '--css=/home/michael/.local/share/markdown-css/github.css',
+    f'--css={os.getenv("HOME")}/.local/share/markdown-css/github.css',
     '--highlight-style=haddock',
     '--self-contained',
     '--metadata',
